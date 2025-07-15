@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import headerImg from '../assets/header.webp';
+import logo from '../assets/favicon.png'
 import { RiMailLine, RiGithubLine, RiLinkedinLine, RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import LaserBeam from './LaserBeam';
 
@@ -28,7 +29,7 @@ function Header() {
         <div className="nav__bar">
           <div className="nav__header">
             <div className="nav__logo">
-              <img src="../../favicon.png" alt="" />
+              <img src={logo} alt="Tayyab MERN Stack Developer React Node.js Express MongoDB JavaScript" />
               <a href="#">Tayyab's Portfolio<span></span></a>
             </div>
             <div className="nav__menu__btn" id="menu-btn" onClick={handleMenuToggle}>
@@ -51,7 +52,7 @@ function Header() {
       <div className="section__container header__container" id="home" style={{ position: 'relative', zIndex: 5 }}>
         <LaserBeam top="100%" left="13%" color="blue" duration="4.5s" />
         <div className="header__image">
-          <img src={headerImg} alt="header" />
+          <img src={headerImg} alt="Tayyab MERN Stack Developer React Node.js Express MongoDB JavaScript" />
         </div>
         <div className="header__content" style={{ textAlign: 'center' }}>
           <motion.h4
