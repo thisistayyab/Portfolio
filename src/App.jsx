@@ -29,11 +29,21 @@ const techIcons = [
   { src: 'https://cdn.simpleicons.org/kalilinux/FFFFFF', top: '55%', left: '55%', duration: 13 }, 
 ];
 
-function App() {
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = React.useState(() => window.innerWidth >= 768);
+  React.useEffect(() => {
+    const onResize = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+  return isDesktop;
+}
 
+function App() {
+  const isDesktop = useIsDesktop();
   return (
     <ThemeCustomization>
-      {/* Global Animated Background: Blurred Circles */}
+      {/* Global Animated Background: Blurred Circles and Tech Icons */}
       <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
         <div style={{
           position: 'absolute',
@@ -59,19 +69,28 @@ function App() {
           opacity: 0.2,
           zIndex: 1,
         }} />
-        {/* Floating Animated Tech Icons */}
+        {/* Tech Icons: animated on desktop, still on mobile */}
         <div style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none' }}>
-          {techIcons.map((item, i) => (
-            <motion.img
-              key={i}
-              src={item.src}
-              alt="tech icon"
-              style={{ position: 'absolute', width: 40, height: 40, top: item.top, left: item.left, opacity: 0.18 }}
-              initial={{ y: -20, x: 0 }}
-              animate={{ y: [0, 20, 0], x: [0, -20, 0] }}
-              transition={{ duration: item.duration, repeat: Infinity }}
-            />
-          ))}
+          {isDesktop
+            ? techIcons.map((item, i) => (
+                <motion.img
+                  key={i}
+                  src={item.src}
+                  alt="tech icon"
+                  style={{ position: 'absolute', width: 40, height: 40, top: item.top, left: item.left, opacity: 0.18 }}
+                  initial={{ y: -20, x: 0 }}
+                  animate={{ y: [0, 20, 0], x: [0, -20, 0] }}
+                  transition={{ duration: item.duration, repeat: Infinity }}
+                />
+              ))
+            : techIcons.map((item, i) => (
+                <img
+                  key={i}
+                  src={item.src}
+                  alt="tech icon"
+                  style={{ position: 'absolute', width: 40, height: 40, top: item.top, left: item.left, opacity: 0.18 }}
+                />
+              ))}
         </div>
       </div>
       {/* Main Content */}
