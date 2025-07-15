@@ -862,7 +862,7 @@ nav {
 
 @media (max-width: 768px) {
   .laser-cone {
-    left: 25% !important;
+    display: none !important;
   }
 }
 @media (max-width: 600px) {

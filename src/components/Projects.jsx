@@ -106,10 +106,10 @@ function Projects() {
           >
             {project.link ? (
               <a href={project.link} target="_blank" rel="noopener noreferrer">
-                <img src={project.img} alt="project" />
+                <img src={project.img} alt="project" loading="lazy" />
               </a>
             ) : (
-              <img src={project.img} alt="project" />
+              <img src={project.img} alt="project" loading="lazy" />
             )}
           </motion.div>
         ))}

@@ -20,7 +20,7 @@ function About() {
         zIndex: 0,
       }} />
       <div className="about__image" style={{ position: 'relative', zIndex: 2 }}>
-        <img src={aboutImg} alt="about" />
+        <img src={aboutImg} alt="about" loading="lazy" />
       </div>
       <div className="about__content" style={{ position: 'relative', zIndex: 2 }}>
         <motion.h2
