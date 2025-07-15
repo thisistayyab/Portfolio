@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import project1 from '../assets/project-1.png';
 import project2 from '../assets/project-2.jpg';
-import project3 from '../assets/project-3.webp';
-import project4 from '../assets/project-4.jpg';
+import project3 from '../assets/project-3.png';
+import project4 from '../assets/project-4.png';
 import project5 from '../assets/project-5.jpg';
-import project6 from '../assets/project-6.jpg';
+import project6 from '../assets/project-6.png';
 
 const projects = [
   {
@@ -13,32 +13,78 @@ const projects = [
     category: 'web',
     img: project1,
     link: 'https://thisistayyab.github.io/NoteHub/',
+    name: 'NoteHub',
+    description: 'A modern note-taking web app built with React and Express.js. Organize, edit, and sync your notes seamlessly.',
+    technologies: [
+      { label: 'React', color: '#61dafb', width: '80%' },
+      { label: 'Express.js', color: '#ab4908ff', width: '70%' },
+      { label: 'MongoDB', color: '#00782eff', width: '60%' },
+    ],
   },
   {
     id: 2,
-    category: 'game',
+    category: 'web',
     img: project2,
+    link: 'https://taylancecrm.vercel.app/',
+    name: 'Taylance CRM',
+    description: 'Taylance CRM helps manage clients, leads, and projects in one streamlined platform with interactive modern design.',
+    technologies: [
+      { label: 'React', color: '#61dafb', width: '80%' },
+      { label: 'Express.js', color: '#ab4908ff', width: '80%' },
+      { label: 'MUI', color: '#1076adff', width: '60%' },
+    ],
   },
   {
     id: 3,
     category: 'design',
     img: project3,
     link: 'https://leetcode.com/u/thisistayyab/',
+    name: 'LeetCode Profile',
+    description: 'I solved 988+ LeetCode problems, showcasing strong problem-solving skills and deep expertise in DSA.',
+    technologies: [
+      { label: 'C++', color: '#004488ff', width: '90%' },
+      { label: 'JavaScript', color: '#ffe96bff', width: '5%' },
+      { label: 'Python', color: '#252cffff', width: '5%' },
+    ],
   },
   {
     id: 4,
     category: 'web',
     img: project4,
+    link: 'https://thisistayyab.github.io/kashif-project/',
+    name: "Shahid's Portfolio",
+    description: 'A modern and beautifully designed portfolio website built to showcase personal brand, skills, and projects with elegance.',
+    technologies: [
+      { label: 'React', color: '#61dafb', width: '90%' },
+      { label: 'CSS', color: '#0fb0f0ff', width: '90%' },
+      { label: 'JavaScript', color: '#ffe96bff', width: '60%' },
+    ],
   },
   {
     id: 5,
     category: 'game',
     img: project5,
+    link:"https://www.threeangelsfashionhouse.ca/",
+    name: 'Shopping Store',
+    description: 'A Shopify website designed for a seamless shopping experience, featuring a modern layout, and optimized product pages.',
+    technologies: [
+      { label: 'Shopify', color: '#61dafb', width: '90%' },
+      { label: 'CSS', color: '#0fb0f0ff', width: '10%' },
+      { label: 'Automation', color: '#ff0000ff', width: '40%' },
+    ],
   },
   {
     id: 6,
-    category: 'design',
+    category: 'web',
     img: project6,
+    link:'https://thisistayyab.github.io/EditWave/',
+    name: 'EditWave',
+    description: 'A modern online text editor web app with a clean UI, real-time editing, and seamless user experience.',
+    technologies: [
+      { label: 'React', color: '#61dafb', width: '90%' },
+      { label: 'Bootstrap', color: '#7000e1ff', width: '90%' },
+      { label: 'JavaScript', color: '#ffe96bff', width: '60%' },
+    ],
   },
 ];
 
@@ -111,6 +157,24 @@ function Projects() {
             ) : (
               <img src={project.img} alt="project" loading="lazy" />
             )}
+            <div className="project__info">
+              {project.technologies && project.technologies.map((tech, idx) => (
+                <div className="project__techrow" key={tech.label + idx}>
+                  <span className="project__techlabel">{tech.label}</span>
+                  <div className="project__techloadingbar-outer">
+                    <div
+                      className="project__techloadingbar-inner"
+                      style={{ width: tech.width, background: tech.color }}
+                    />
+                  </div>
+                </div>
+              ))}
+              <h3 className="project__name">{project.name}</h3>
+              <p className="project__desc">{project.description}</p>
+              {project.link && (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="project__liveview">Live View</a>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>

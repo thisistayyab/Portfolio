@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import headerImg from '../assets/header.webp';
 import logo from '../assets/favicon.png'
@@ -8,6 +8,28 @@ import LaserBeam from './LaserBeam';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const lastScrollY = useRef(window.scrollY);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 50) {
+        setShowNav(true);
+        lastScrollY.current = window.scrollY;
+        return;
+      }
+      if (window.scrollY > lastScrollY.current) {
+        // Scrolling down
+        setShowNav(false);
+      } else {
+        // Scrolling up
+        setShowNav(true);
+      }
+      lastScrollY.current = window.scrollY;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMenuToggle = () => {
     setMenuOpen((open) => !open);
@@ -25,7 +47,9 @@ function Header() {
         <a className="circle-icon" href="https://github.com/thisistayyab"><RiGithubLine size={24} /></a>
         <a className="circle-icon" href="https://www.linkedin.com/in/thisistayyab/"><RiLinkedinLine size={24} /></a>
       </div>
-      <nav>
+      <div className="sticky-nav-placeholder" />
+      <nav className={`sticky-nav${showNav ? ' show' : ' hide'}`}
+           style={{ zIndex: 200 }}>
         <div className="nav__bar">
           <div className="nav__header">
             <div className="nav__logo">
@@ -43,14 +67,15 @@ function Header() {
             <li className="link"><a href="#about">About<span></span></a></li>
             <li className="link"><a href="#project">Projects<span></span></a></li>
             <li className="link"><a href="#service">Services<span></span></a></li>
-            <li className="link"><a href="#client">Clients<span></span></a></li>
-            <li className="link"><a href="#blog">Blog<span></span></a></li>
+            {/* <li className="link"><a href="#client">Clients<span></span></a></li> */}
+            {/* <li className="link"><a href="#blog">Blog<span></span></a></li> */}
             <li className="btn"><a href="#contact">Contact<span></span></a></li>
           </ul>
         </div>
       </nav>
       <div className="section__container header__container" id="home" style={{ position: 'relative', zIndex: 5 }}>
-        <LaserBeam top="100%" left="13%" color="blue" duration="4.5s" />
+        <LaserBeam top="100%" left="13%" color="blue" duration="6.0s" />
+        <LaserBeam top="100%" left="13%" color="blue" duration="5.0s" />
         <div className="header__image">
           <img src={headerImg} alt="Tayyab MERN Stack Developer React Node.js Express MongoDB JavaScript" loading="lazy" />
         </div>

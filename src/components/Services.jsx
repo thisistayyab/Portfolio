@@ -56,7 +56,7 @@ function Services() {
           { icon: 'ri-window-line', title: 'Website Design', desc: 'I craft user-friendly interfaces that engage visitors and help you achieve your online goals with minimum efforts.' },
           { icon: 'ri-store-line', title: 'E-commerce Solutions', desc: 'I build secure, scalable, and user-centric online stores that enhance the shopping experience and drive conversions.' },
           { icon: 'ri-stack-line', title: 'DSA Mastery', desc: 'From arrays to advanced algorithms, we build efficient and optimized solutions that form the backbone of high-performance applications.' },
-          { icon: 'ri-share-line', title: 'Content Marketing', desc: 'My services include creating blog posts, videos, and social media content that drives traffic and engagement.' },
+          { icon: 'ri-window-line', title: 'Web Development', desc: 'I build responsive, high-performance web applications using the MERN stack, tailored to meet your business needs.' },
           { icon: 'ri-seo-line', title: 'SEO', desc: 'My SEO strategies are tailored to your specific goals, helping you reach your target audience and grow your online presence.' },
           { icon: 'ri-share-circle-line', title: 'Digital Marketing', desc: 'From pay-per-click (PPC) advertising to social media marketing, I ensure your brand stands out in the crowded digital landscape.' },
         ].map((item, i) => (

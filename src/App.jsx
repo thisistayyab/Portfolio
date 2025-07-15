@@ -5,7 +5,6 @@ import About from './components/About';
 import Banner from './components/Banner';
 import Projects from './components/Projects';
 import Services from './components/Services';
-import Clients from './components/Clients';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ThemeCustomization from './themes';
@@ -100,7 +99,6 @@ function App() {
         <Banner />
         <Projects />
         <Services />
-        <Clients />
         <Contact />
         <Footer />
       </div>

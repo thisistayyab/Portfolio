@@ -20,7 +20,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Urbanist';
+}
+
+html, body {
+  font-family: 'Urbanist', sans-serif !important;
 }
 
 .section__container {
@@ -84,7 +87,6 @@ body {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
   color: var(--white);
   background-color: var(--secondary-color);
 }
@@ -119,7 +121,6 @@ body {
 }
 
 nav {
-  position: fixed;
   isolation: isolate;
   width: 100%;
   z-index: 9;
@@ -142,7 +143,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--secondary-color);
+  background-color: transparent;
 }
 
 .nav__logo {
@@ -207,7 +208,7 @@ nav {
   justify-content: center;
   flex-direction: column;
   gap: 2rem;
-  transform: translateY(-100%);
+  transform: translateY(-120%);
   background-color: var(--secondary-color-light);
   transition: 0.5s;
   z-index: -1;
@@ -215,6 +216,7 @@ nav {
 
 .nav__links.open {
   transform: translateY(0);
+  z-index: 100;
 }
 
 .link a {
@@ -438,8 +440,77 @@ nav {
 }
 
 .project__card img {
-  border-radius: 5px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #22223b;
+  display: block;
+}
+@media (max-width: 600px) {
+  .project__card img {
+    height: 140px;
+  }
+}
+
+.project__info {
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  text-align: left;
+}
+.project__name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+.project__desc {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 0.75rem;
+}
+.project__liveview {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  border-radius: 5rem;
   cursor: pointer;
+  background-color: transparent;
+  border: 2px solid #0d6efd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.project__liveview:hover {
+  box-shadow: 0 0 10px #0d6efd, 0 0 20px #0d6efd, 0 0 30px #0d6efd;
+  background-color: rgba(13, 110, 253, 0.1);
+  color: white;
+  border-color: #0d6efd;
+}
+
+.project__techrow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.project__techlabel {
+  min-width: 80px;
+  font-size: 0.98rem;
+  color: var(--text-light);
+  margin-right: 0.75rem;
+  font-weight: 500;
+}
+.project__techloadingbar-outer {
+  flex: 1;
+  height: 8px;
+  background: #22223b;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.project__techloadingbar-inner {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 
 .service__grid {
@@ -863,18 +934,39 @@ nav {
 
 @media (max-width: 768px) {
   .laser-cone {
-    left: 25% !important;
-  }
-}
-@media (max-width: 600px) {
-  .laser-cone {
-    left: 20% !important;
+    display: none !important;
   }
 }
 
 
 @keyframes scan-rotate {
-  0%   { transform: rotate(207deg); }
-  50%  { transform: rotate(147deg); }
-  100% { transform: rotate(207deg); }
+  0%   { transform: rotate(227deg); }
+  50%  { transform: rotate(134deg); }
+  100% { transform: rotate(227deg); }
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  height: 68px;
+}
+.sticky-nav.show {
+  transform: translateY(0);
+}
+.sticky-nav.hide {
+  transform: translateY(-100%);
+}
+
+.sticky-nav-placeholder {
+  height: 15vh;
+  width: 100%;
+}
+
+/* Ensure mobile nav menu is always on top when open */
+.nav__links.open {
+  z-index: 300 !important;
 }
