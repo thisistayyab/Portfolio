@@ -19,12 +19,12 @@ export default function ThemeCustomization({ children }) {
 }
 
 function ThemeWithMode({ children }) {
-  const { mode = 'light' } = useColorScheme();
+  // const { mode = 'dark' } = useColorScheme();
   // Only allow 'light' or 'dark' for Palette
-  let paletteMode = mode;
-  if (mode === 'system') {
-    paletteMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
+  let paletteMode = 'dark';
+  // if (mode === 'system') {
+  //   paletteMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // }
   const baseTheme = Palette(paletteMode, 'default');
   const themeTypography = Typography(`'Urbanist', sans-serif`);
   const themeCustomShadows = useMemo(() => CustomShadows(baseTheme), [baseTheme]);

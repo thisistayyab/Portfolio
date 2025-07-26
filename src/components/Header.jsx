@@ -1,78 +1,22 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import headerImg from '../assets/header.webp';
-import logo from '../assets/favicon.png'
 import { RiMailLine, RiGithubLine, RiLinkedinLine, RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import LaserBeam from './LaserBeam';
+import AppAppBar from './Appbar';
 
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [showNav, setShowNav] = useState(true);
-  const lastScrollY = useRef(window.scrollY);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY < 50) {
-        setShowNav(true);
-        lastScrollY.current = window.scrollY;
-        return;
-      }
-      if (window.scrollY > lastScrollY.current) {
-        // Scrolling down
-        setShowNav(false);
-      } else {
-        // Scrolling up
-        setShowNav(true);
-      }
-      lastScrollY.current = window.scrollY;
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleMenuToggle = () => {
-    setMenuOpen((open) => !open);
-  };
-
-  const handleNavLinkClick = () => {
-    setMenuOpen(false);
-  };
 
   return (
     <header className="header" style={{ position: 'relative', overflow: 'hidden' }}>
+      <AppAppBar/>
       {/* Header Content */}
       <div className="header__socials">
         <a className="circle-icon" href="mailto:thisistayyab@outlook.com?subject=Let's%20Connect&body=Hi%20Tayyab,%0D%0A%0D%0A"><RiMailLine size={24} /></a>
         <a className="circle-icon" href="https://github.com/thisistayyab"><RiGithubLine size={24} /></a>
         <a className="circle-icon" href="https://www.linkedin.com/in/thisistayyab/"><RiLinkedinLine size={24} /></a>
       </div>
-      <div className="sticky-nav-placeholder" />
-      <nav className={`sticky-nav${showNav ? ' show' : ' hide'}`}
-           style={{ zIndex: 200 }}>
-        <div className="nav__bar">
-          <div className="nav__header">
-            <div className="nav__logo">
-              <img src={logo} alt="Tayyab MERN Stack Developer React Node.js Express MongoDB JavaScript" />
-              <a href="#">Tayyab's Portfolio<span></span></a>
-            </div>
-            <div className="nav__menu__btn" id="menu-btn" onClick={handleMenuToggle}>
-              <span>
-                {menuOpen ? <RiCloseLine size={24} /> : <RiMenu3Line size={24} />}
-              </span>
-            </div>
-          </div>
-          <ul className={`nav__links${menuOpen ? ' open' : ''}`} id="nav-links" onClick={handleNavLinkClick}>
-            <li className="link"><a href="#home">Home<span></span></a></li>
-            <li className="link"><a href="#about">About<span></span></a></li>
-            <li className="link"><a href="#project">Projects<span></span></a></li>
-            <li className="link"><a href="#service">Services<span></span></a></li>
-            {/* <li className="link"><a href="#client">Clients<span></span></a></li> */}
-            {/* <li className="link"><a href="#blog">Blog<span></span></a></li> */}
-            <li className="btn"><a href="#contact">Contact<span></span></a></li>
-          </ul>
-        </div>
-      </nav>
       <div className="section__container header__container" id="home" style={{ position: 'relative', zIndex: 5 }}>
         <LaserBeam top="100%" left="13%" color="blue" duration="6.0s" />
         <LaserBeam top="100%" left="13%" color="blue" duration="5.0s" />
@@ -101,7 +45,7 @@ function Header() {
             transition={{ delay: 0.6, duration: 1 }}
           >
             I’m a passionate web developer and computer engineering student with 3+ years of hands-on experience in building full-stack applications. I specialize in creating clean, responsive UIs with React and robust backends using modern technologies.<br /><br />
-            Beyond development, I've solved over 850+ LeetCode problems, strengthening my core in Data Structures and Algorithms — giving me an edge in building optimized, scalable solutions.
+            Beyond development, I've solved over 1000+ LeetCode problems, strengthening my core in Data Structures and Algorithms — giving me an edge in building optimized, scalable solutions.
           </motion.p>
           <motion.button
             className="btn"
