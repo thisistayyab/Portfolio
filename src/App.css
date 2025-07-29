@@ -344,8 +344,8 @@ nav {
 }
 
 .fire {
-  color: #a0cfff;
-  text-shadow: 0 0 10px #1d75ff;
+  color: #00d1e4;
+  text-shadow: 0 0 10px #1dd9ff;
   animation: blue-glow 1s ease-in-out infinite alternate;
 }
 

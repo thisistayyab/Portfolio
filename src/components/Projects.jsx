@@ -4,25 +4,13 @@ import project1 from '../assets/project-1.png';
 import project2 from '../assets/project-2.jpg';
 import project3 from '../assets/project-3.png';
 import project4 from '../assets/project-4.png';
-import project5 from '../assets/project-5.jpg';
+import project5 from '../assets/project-5.webp';
 import project6 from '../assets/project-6.png';
+import project7 from '../assets/project-7.png';
 
 const projects = [
   {
     id: 1,
-    category: 'web',
-    img: project1,
-    link: 'https://thisistayyab.github.io/NoteHub/',
-    name: 'NoteHub',
-    description: 'A modern note-taking web app built with React and Express.js. Organize, edit, and sync your notes seamlessly.',
-    technologies: [
-      { label: 'React', color: '#61dafb', width: '80%' },
-      { label: 'Express.js', color: '#ab4908ff', width: '70%' },
-      { label: 'MongoDB', color: '#00782eff', width: '60%' },
-    ],
-  },
-  {
-    id: 2,
     category: 'web',
     img: project2,
     link: 'https://taylancecrm.vercel.app/',
@@ -33,6 +21,21 @@ const projects = [
       { label: 'Express.js', color: '#ab4908ff', width: '80%' },
       { label: 'MUI', color: '#1076adff', width: '60%' },
     ],
+    button:'Live View'
+  },
+  {
+    id: 2,
+    category: 'web',
+    img: project1,
+    link: 'https://thisistayyab.github.io/NoteHub/',
+    name: 'NoteHub',
+    description: 'A modern note-taking web app built with React and Express.js. Organize, edit, and sync your notes seamlessly.',
+    technologies: [
+      { label: 'React', color: '#61dafb', width: '80%' },
+      { label: 'Express.js', color: '#ab4908ff', width: '70%' },
+      { label: 'MongoDB', color: '#00782eff', width: '60%' },
+    ],
+    button:'Live View'
   },
   {
     id: 3,
@@ -40,38 +43,41 @@ const projects = [
     img: project3,
     link: 'https://leetcode.com/u/thisistayyab/',
     name: 'LeetCode Profile',
-    description: 'I solved 988+ LeetCode problems, showcasing strong problem-solving skills and deep expertise in DSA.',
+    description: 'I solved 1000+ LeetCode problems, showcasing strong problem-solving skills and deep expertise in DSA.',
     technologies: [
       { label: 'C++', color: '#004488ff', width: '90%' },
       { label: 'JavaScript', color: '#ffe96bff', width: '5%' },
       { label: 'Python', color: '#252cffff', width: '5%' },
     ],
+    button:'Live View'
   },
   {
     id: 4,
     category: 'web',
-    img: project4,
-    link: 'https://thisistayyab.github.io/kashif-project/',
-    name: "Shahid's Portfolio",
-    description: 'A modern and beautifully designed portfolio website built to showcase personal brand, skills, and projects with elegance.',
+    img: project7,
+    link:'https://github.com/thisistayyab/Taynio-chat',
+    name: 'Taynio Chat',
+    description: 'Taynio Chat is a modern real-time chat app created using socket.io for fast, secure, and reliable messaging.',
     technologies: [
-      { label: 'React', color: '#61dafb', width: '90%' },
-      { label: 'CSS', color: '#0fb0f0ff', width: '90%' },
-      { label: 'JavaScript', color: '#ffe96bff', width: '60%' },
+      { label: 'React', color: '#61dafb', width: '80%' },
+      { label: 'Node.js', color: '#0d5619ff', width: '70%' },
+      { label: 'Socket.io', color: '#005595ff', width: '60%' },
     ],
+    button:'Repo Link'
   },
   {
     id: 5,
-    category: 'game',
+    category: 'web',
     img: project5,
-    link:"https://www.threeangelsfashionhouse.ca/",
-    name: 'Shopping Store',
-    description: 'A Shopify website designed for a seamless shopping experience, featuring a modern layout, and optimized product pages.',
+    link:"https://newswave-thisistayyab.netlify.app/",
+    name: 'NewsWave',
+    description: 'Newswave is a dynamic and engaging news aggregator app, designed to keep you informed and up-to-date with the latest headlines.',
     technologies: [
-      { label: 'Shopify', color: '#61dafb', width: '90%' },
-      { label: 'CSS', color: '#0fb0f0ff', width: '10%' },
-      { label: 'Automation', color: '#ff0000ff', width: '40%' },
+      { label: 'React', color: '#61dafb', width: '90%' },
+      { label: 'Bootstrap', color: '#0fb0f0ff', width: '50%' },
+      { label: 'Integration', color: '#ff0000ff', width: '40%' },
     ],
+    button:'Live View'
   },
   {
     id: 6,
@@ -85,6 +91,21 @@ const projects = [
       { label: 'Bootstrap', color: '#7000e1ff', width: '90%' },
       { label: 'JavaScript', color: '#ffe96bff', width: '60%' },
     ],
+    button:'Live View'
+  },
+  {
+    id: 7,
+    category: 'web',
+    img: project4,
+    link: 'https://thisistayyab.github.io/kashif-project/',
+    name: "Shahid's Portfolio",
+    description: 'A modern and beautifully designed portfolio website built to showcase personal brand, skills, and projects with elegance.',
+    technologies: [
+      { label: 'React', color: '#61dafb', width: '90%' },
+      { label: 'CSS', color: '#0fb0f0ff', width: '90%' },
+      { label: 'JavaScript', color: '#ffe96bff', width: '60%' },
+    ],
+    button:'Live View'
   },
 ];
 
@@ -172,7 +193,7 @@ function Projects() {
               <h3 className="project__name">{project.name}</h3>
               <p className="project__desc">{project.description}</p>
               {project.link && (
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="project__liveview">Live View</a>
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="project__liveview">{project.button}</a>
               )}
             </div>
           </motion.div>

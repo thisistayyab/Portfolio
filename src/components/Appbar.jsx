@@ -21,10 +21,10 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   flexShrink: 0,
-  borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
+  borderRadius: `calc(${theme.shape.borderRadius}px + 12px)`,
   backdropFilter: 'blur(24px)',
   border: '1px solid',
-  borderColor: '#2c2c2cff',
+  borderColor: '#232323ff',
   backgroundColor: theme.vars
     ? `rgba(${theme.vars.palette.background.defaultChannel} / 0.4)`
     : alpha(theme.palette.background.default, 0.4),
@@ -61,32 +61,30 @@ export default function AppAppBar() {
             <Box
               component="img"
               src={logo}
-              alt="Taylance CRM Logo"
+              alt="Tayyab's Logo"
               sx={{
-                width: 40,
-                height: 40,
+                width: 30,
+                height: 30,
                 borderRadius: 2,
-                mr: 1,
-                background: '#232946',
-                p: 0.5,
+                // p: 0.5,
                 boxShadow: 1,
               }}
             />
             <Typography
-              variant="h6"
+            className='fire'
+              variant="h5"
               sx={{
-                color: '#ffffffff',
                 fontWeight: 700,
                 letterSpacing: 1,
-                fontSize: 20,
+                fontSize: 17,
                 display: 'block',
               }}
             >
-              Tayyab's Portfolio
+              ayyab's Portfolio
             </Typography>
 
             {/* Desktop Nav */}
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 4, gap: 2 }}>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 4, gap: 1 }}>
               {navItems.map((item) => (
                 <Button
                   key={item.label}
