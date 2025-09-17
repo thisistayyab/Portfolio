@@ -18,8 +18,8 @@ function Header() {
         <a className="circle-icon" href="https://www.linkedin.com/in/thisistayyab/"><RiLinkedinLine size={24} /></a>
       </div>
       <div className="section__container header__container" id="home" style={{ position: 'relative', zIndex: 5 }}>
-        <LaserBeam top="100%" left="13%" color="blue" duration="6.0s" />
-        <LaserBeam top="100%" left="13%" color="blue" duration="5.0s" />
+        {/* <LaserBeam top="100%" left="13%" color="blue" duration="6.0s" />
+        <LaserBeam top="100%" left="13%" color="blue" duration="5.0s" /> */}
         <div className="header__image">
           <img src={headerImg} alt="Tayyab MERN Stack Developer React Node.js Express MongoDB JavaScript" loading="lazy" />
         </div>

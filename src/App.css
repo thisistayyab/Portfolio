@@ -316,7 +316,7 @@ nav {
   font-size: 1rem;
   font-weight: 400;
   color: var(--text-light);
-  background-color: var(--secondary-color-light);
+  background: rgba(0, 0, 0, 0.179);
   border-left: 2px solid var(--primary-color-dark);
   border-radius: 5px;
 }
@@ -371,7 +371,7 @@ nav {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  background-color: var(--secondary-color-light);
+  background: rgba(0, 0, 0, 0.179);
   border-radius: 5px;
   border-bottom: 2px solid transparent;
   transition: 0.3s;
@@ -438,6 +438,12 @@ nav {
 .project__grid {
   display: grid;
   gap: 1rem;
+}
+
+.project__card{
+  background: rgba(0, 0, 0, 0.179);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .project__card img {
@@ -971,3 +977,56 @@ nav {
 .nav__links.open {
   z-index: 300 !important;
 }
+
+
+
+/* Container */
+.profile__container {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+/* Grid Layout */
+.profile__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Card */
+.profile__card {
+  background: rgba(0, 0, 0, 0.179);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column; /* stack content vertically */
+}
+
+.profile__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Title */
+.profile__card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+/* Description */
+.profile__card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1; /* take up remaining space */
+}
+

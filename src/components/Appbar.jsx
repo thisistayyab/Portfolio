@@ -56,7 +56,6 @@ export default function AppAppBar() {
     >
       <Container maxWidth="lg">
         <StyledToolbar variant="dense" disableGutters >
-          {/* Logo and Name */}
           <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
             <Box
               component="img"
@@ -71,7 +70,6 @@ export default function AppAppBar() {
               }}
             />
             <Typography
-            className='fire'
               variant="h5"
               sx={{
                 fontWeight: 700,

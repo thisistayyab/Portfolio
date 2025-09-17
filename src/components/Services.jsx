@@ -1,76 +1,98 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { RiWindowLine, RiStoreLine, RiStackLine, RiShareLine, RiSeoLine, RiShareCircleLine } from 'react-icons/ri';
 
-const iconMap = {
-  'ri-window-line': <RiWindowLine size={28} />,
-  'ri-store-line': <RiStoreLine size={28} />,
-  'ri-stack-line': <RiStackLine size={28} />,
-  'ri-share-line': <RiShareLine size={28} />,
-  'ri-seo-line': <RiSeoLine size={28} />,
-  'ri-share-circle-line': <RiShareCircleLine size={28} />,
-};
+const profiles = [
+  {
+    id: 1,
+    name: 'Upwork',
+    description: 'Check out my Upwork profile where I offer freelance MERN stack and full-stack development services.',
+    link: 'https://www.upwork.com/freelancers/thisistayyab',
+    button: 'View Profile',
+  },
+  {
+    id: 2,
+    name: 'Fiverr',
+    description: 'Explore my Fiverr gigs covering modern web apps, portfolio sites, and custom solutions.',
+    link: 'https://www.fiverr.com/thisistayyab',
+    button: 'View Profile',
+  },
+  {
+    id: 3,
+    name: 'Freelancer',
+    description: 'Check out my Freelancer profile where I deliver web apps, CRM systems, and tailored solutions.',
+    link: 'https://www.freelancer.com/u/thisistayyab',
+    button: 'View Profile',
+  },
+  {
+    id: 4,
+    name: 'Truelancer',
+    description: 'Browse my Truelancer profile for professional projects in web development and custom applications.',
+    link: 'https://www.truelancer.com/freelancer/tayyabaslam19',
+    button: 'View Profile',
+  },
+  {
+    id: 5,
+    name: 'GitHub',
+    description: 'Browse my GitHub repositories including full-stack apps, experiments, and open-source projects.',
+    link: 'https://github.com/thisistayyab',
+    button: 'View Repos',
+  },
+  {
+    id: 6,
+    name: 'LinkedIn',
+    description: 'Connect with me on LinkedIn to view my professional journey, skills, and endorsements.',
+    link: 'https://pk.linkedin.com/in/thisistayyab',
+    button: 'Connect',
+  },
+  {
+    id: 7,
+    name: 'LeetCode',
+    description: 'Explore my LeetCode profile where I solved 1000+ problems, showcasing strong DSA and problem-solving skills.',
+    link: 'https://leetcode.com/u/thisistayyab/',
+    button: 'View Profile',
+  },
+  {
+    id: 8,
+    name: 'Credly',
+    description: 'Check out my Credly profile to view verified certifications that highlight my technical expertise and achievements.',
+    link: 'https://www.credly.com/users/thisistayyab',
+    button: 'View Profile',
+  },
 
-function Services() {
+];
+
+function Profiles() {
   return (
-    <section className="section__container service__container" id="service" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Blurred Circle Background */}
-      <div style={{
-        position: 'absolute',
-        top: '10%',
-        right: '10%',
-        width: 160,
-        height: 160,
-        background: '#00c2ff',
-        borderRadius: '50%',
-        filter: 'blur(80px)',
-        opacity: 0.15,
-        zIndex: 0,
-      }} />
-      <motion.p
-        className="section__subheader"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-      >My Services</motion.p>
+    <section className="section__container profile__container" id="profiles">
       <motion.h2
         className="section__header"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.7 }}
-        viewport={{ once: true }}
-      >What I Do?</motion.h2>
-      <motion.p
-        className="section__description"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.7 }}
+        transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        I specialize in a wide range of web development services designed to
-        transform your vision into reality.
-      </motion.p>
-      <div className="service__grid">
-        {[
-          { icon: 'ri-window-line', title: 'Website Design', desc: 'I craft user-friendly interfaces that engage visitors and help you achieve your online goals with minimum efforts.' },
-          { icon: 'ri-store-line', title: 'E-commerce Solutions', desc: 'I build secure, scalable, and user-centric online stores that enhance the shopping experience and drive conversions.' },
-          { icon: 'ri-stack-line', title: 'DSA Mastery', desc: 'From arrays to advanced algorithms, we build efficient and optimized solutions that form the backbone of high-performance applications.' },
-          { icon: 'ri-window-line', title: 'Web Development', desc: 'I build responsive, high-performance web applications using the MERN stack, tailored to meet your business needs.' },
-          { icon: 'ri-seo-line', title: 'SEO', desc: 'My SEO strategies are tailored to your specific goals, helping you reach your target audience and grow your online presence.' },
-          { icon: 'ri-share-circle-line', title: 'Digital Marketing', desc: 'From pay-per-click (PPC) advertising to social media marketing, I ensure your brand stands out in the crowded digital landscape.' },
-        ].map((item, i) => (
+        My Profiles
+      </motion.h2>
+      <div className="profile__grid">
+        {profiles.map((profile, i) => (
           <motion.div
-            className="service__card"
-            key={item.title}
+            key={profile.id}
+            className="profile__card"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 + i * 0.15, duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <span>{iconMap[item.icon]}</span>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
+            <h3>{profile.name}</h3>
+            <p>{profile.description}</p>
+            <a
+              href={profile.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+            >
+              {profile.button}
+            </a>
           </motion.div>
         ))}
       </div>
@@ -78,4 +100,4 @@ function Services() {
   );
 }
 
-export default Services; 
+export default Profiles;
