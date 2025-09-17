@@ -82,16 +82,43 @@ export default function AppAppBar() {
             </Typography>
 
             {/* Desktop Nav */}
-            <Box sx={{ display: { xs: 'none',sm:'flex', md: 'flex' }, ml: 4, gap: 1 }}>
+            <Box sx={{ display: { xs: 'none', sm: 'flex', md: 'flex' }, ml: 4, gap: 2 }}>
               {navItems.map((item) => (
                 <Button
                   key={item.label}
                   href={item.href}
                   variant="text"
-                  color="white"
                   size="large"
+                  disableRipple
+                  sx={{
+                    position: 'relative',
+                    color: 'white',
+                    textTransform: 'none',
+                    px: 0,
+                    backgroundColor: 'transparent',
+                    '&:hover': {
+                      bgcolor: 'transparent', 
+                      color:'white',
+                    },
+                    '&:hover .underline': {
+                      width: '100%', 
+                    },
+                  }}
                 >
                   {item.label}
+                  <Box
+                    className="underline"
+                    sx={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      height: '3px',
+                      width: 0,
+                      bgcolor: '#0d6efd', // this is your loading bar color
+                      transition: 'width 0.3s ease-in-out',
+                      borderRadius: '2px',
+                    }}
+                  />
                 </Button>
               ))}
             </Box>
@@ -115,16 +142,11 @@ export default function AppAppBar() {
                   </IconButton>
                 </Box>
                 {navItems.map((item) => (
-                  <MenuItem key={item.label} component="a" href={item.href} sx={{ color: '#fff' }}>
+                  <MenuItem key={item.label} component="a" href={item.href} sx={{ color: '#fff' }} onClick={toggleDrawer(false)}>
                     {item.label}
                   </MenuItem>
                 ))}
                 <Divider sx={{ my: 3, borderColor: '#333' }} />
-                <MenuItem>
-                  <Button href="#contact" color="primary" variant="contained" fullWidth>
-                    Contact
-                  </Button>
-                </MenuItem>
               </Box>
             </Drawer>
           </Box>

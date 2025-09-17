@@ -61,9 +61,9 @@ const profiles = [
 
 ];
 
-function Profiles() {
+function Services() {
   return (
-    <section className="section__container profile__container" id="profiles">
+    <section className="section__container profile__container" id="service">
       <motion.h2
         className="section__header"
         initial={{ opacity: 0, y: -30 }}
@@ -100,4 +100,4 @@ function Profiles() {
   );
 }
 
-export default Profiles;
+export default Services;
