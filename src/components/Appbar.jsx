@@ -82,7 +82,7 @@ export default function AppAppBar() {
             </Typography>
 
             {/* Desktop Nav */}
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 4, gap: 1 }}>
+            <Box sx={{ display: { xs: 'none',sm:'flex', md: 'flex' }, ml: 4, gap: 1 }}>
               {navItems.map((item) => (
                 <Button
                   key={item.label}
@@ -98,7 +98,7 @@ export default function AppAppBar() {
           </Box>
 
           {/* Mobile Nav */}
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'flex',sm:'none', md: 'none' } }}>
             <IconButton aria-label="menu" onClick={toggleDrawer(true)}>
               <MenuIcon />
             </IconButton>

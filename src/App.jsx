@@ -9,24 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ThemeCustomization from './themes';
 import { motion } from 'framer-motion';
-// Diverse tech icons from Simple Icons CDN
-const techIcons = [
-  { src: 'https://cdn.simpleicons.org/cplusplus/00599C', top: '15%', left: '20%', duration: 9 },
-  { src: 'https://cdn.simpleicons.org/csswizardry/00599C', top: '19%', left: '30%', duration: 9 },
-  { src: 'https://cdn.simpleicons.org/html5/E34F26', top: '30%', left: '60%', duration: 11 },
-  { src: 'https://cdn.simpleicons.org/tailwindcss/1572B6', top: '70%', left: '25%', duration: 10 },
-  { src: 'https://cdn.simpleicons.org/javascript/F7DF1E', top: '50%', left: '40%', duration: 8 },
-  { src: 'https://cdn.simpleicons.org/bootstrap/7952B3', top: '15%', left: '75%', duration: 9 },
-  { src: 'https://cdn.simpleicons.org/mongodb/47A248', top: '80%', left: '60%', duration: 12 },
-  { src: 'https://cdn.simpleicons.org/express/FF6F00', top: '35%', left: '10%', duration: 10 },
-  { src: 'https://cdn.simpleicons.org/python/3776AB', top: '65%', left: '80%', duration: 11 },
-  { src: 'https://cdn.simpleicons.org/scikitlearn/F7931E', top: '20%', left: '50%', duration: 10 },
-  { src: 'https://cdn.simpleicons.org/tensorflow/FF6F00', top: '80%', left: '30%', duration: 12 },
-  { src: 'https://cdn.simpleicons.org/pytorch/EE4C2C', top: '40%', left: '80%', duration: 10 },
-  { src: 'https://cdn.simpleicons.org/react/61DAFB', top: '60%', left: '10%', duration: 11 },
-  { src: 'https://cdn.simpleicons.org/robotframework/00C0B5', top: '75%', left: '50%', duration: 13 }, // AI/robot
-  { src: 'https://cdn.simpleicons.org/kalilinux/FFFFFF', top: '55%', left: '55%', duration: 13 }, 
-];
+import techIcons from './techIcons.jsx'
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = React.useState(() => window.innerWidth >= 768);
