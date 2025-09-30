@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import aboutImg from '../assets/about.jpg';
+import aboutImg from '../assets/about.webp';
 import { RiMailLine, RiGithubLine, RiLinkedinLine } from 'react-icons/ri';
 
 function About() {
@@ -19,7 +19,7 @@ function About() {
         opacity: 0.18,
         zIndex: 0,
       }} />
-      <div className="about__image" style={{ position: 'relative', zIndex: 2 }}>
+      <div className="about__image image-wrapper" style={{ position: 'relative', zIndex: 2 }}>
         <img src={aboutImg} alt="about" loading="lazy" />
       </div>
       <div className="about__content" style={{ position: 'relative', zIndex: 2 }}>
