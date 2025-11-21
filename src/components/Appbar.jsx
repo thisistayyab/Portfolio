@@ -40,6 +40,7 @@ export default function AppAppBar() {
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#project' },
+    { label: 'Testimonials', href: '#client' },
     { label: 'Services', href: '#service' },
     { label: 'Contact', href: '#contact' },
   ];

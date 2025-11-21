@@ -47,7 +47,7 @@ const profiles = [
   {
     id: 7,
     name: 'LeetCode',
-    description: 'Explore my LeetCode profile where I solved 1000+ problems, showcasing strong DSA and problem-solving skills.',
+    description: 'Explore my LeetCode profile where I solved 1150+ problems, showcasing strong DSA and problem-solving skills.',
     link: 'https://leetcode.com/u/thisistayyab/',
     button: 'View Profile',
   },

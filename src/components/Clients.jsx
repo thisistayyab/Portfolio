@@ -4,14 +4,13 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import client1 from '../assets/client-1.webp';
-import client2 from '../assets/client-2.webp';
 import { RiStarFill, RiStarLine } from 'react-icons/ri';
 
 function Clients() {
   return (
     <section className="section__container client__container" id="client">
       <p className="section__subheader">Testimonials</p>
-      <h2 className="section__header">What Our Clients Say About Us</h2>
+      <h2 className="section__header">What Clients Say About Me</h2>
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: true }}
@@ -19,24 +18,9 @@ function Clients() {
         className="swiper"
       >
         <SwiperSlide>
-          <div className="client__card">
-            <img src={client1} alt="client" />
-            <div>
-              <p>
-                He brought our vision to life with a stunning, modern website that not only looks great but also performs flawlessly across all devices. His attention to design detail, user experience, and responsiveness exceeded our expectations. We've received countless compliments, and our online engagement has significantly improved. Truly the best in web design!
-              </p>
-              <h4>Kashif Shakeel <span>CEO, Corporation</span></h4>
-              <div className="client__ratings">
-                <span><RiStarFill /></span>
-                <span><RiStarFill /></span>
-                <span><RiStarFill /></span>
-                <span><RiStarFill /></span>
-                <span><RiStarLine /></span>
-              </div>
-            </div>
-          </div>
+            <img className='client__img' src={client1} alt="client" />
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <div className="client__card">
             <img src={client2} alt="client" />
             <div>
@@ -53,7 +37,7 @@ function Clients() {
               </div>
             </div>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </section>
   );

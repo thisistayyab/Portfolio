@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import aboutImg from '../assets/about.webp';
 import { RiMailLine, RiGithubLine, RiLinkedinLine } from 'react-icons/ri';
+import cv from "../assets/Tayyab's CV.pdf"
 
 function About() {
   return (
@@ -46,7 +47,7 @@ function About() {
           transition={{ delay: 0.4, duration: 0.8 }}
           viewport={{ once: true }}
         >
-          With over 1000+ LeetCode problems solved, I bring deep algorithmic thinking to every project. This blend of creativity and problem-solving allows me to develop web solutions that are not only visually appealing but also highly efficient.
+          With over 1150+ LeetCode problems solved, I bring deep algorithmic thinking to every project. This blend of creativity and problem-solving allows me to develop web solutions that are not only visually appealing but also highly efficient.
         </motion.h4>
         <motion.div
           className="about__btns"
@@ -55,7 +56,7 @@ function About() {
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <a color='white' href="#" download className="btn download__btn">
+          <a color='white' href={cv} download className="btn download__btn">
             Download CV
           </a>
           <a className="circle-icon" href="mailto:thisistayyab@outlook.com?subject=Let's%20Connect&body=Hi%20Tayyab,%0D%0A%0D%0A"><RiMailLine size={20} /></a>

@@ -18,8 +18,8 @@ function Header() {
         <a className="circle-icon" href="https://www.linkedin.com/in/thisistayyab/"><RiLinkedinLine size={24} /></a>
       </div>
       <div className="section__container header__container" id="home" style={{ position: 'relative', zIndex: 5 }}>
-        {/* <LaserBeam top="100%" left="13%" color="blue" duration="6.0s" />
-        <LaserBeam top="100%" left="13%" color="blue" duration="5.0s" /> */}
+        <LaserBeam top="100%" left="13%" color="blue" duration="6.0s" />
+        <LaserBeam top="100%" left="13%" color="blue" duration="5.0s" />
         <div className="header__image">
           <img src={headerImg} alt="Tayyab MERN Stack Developer React Node.js Express MongoDB JavaScript" loading="lazy" />
         </div>
@@ -37,7 +37,7 @@ function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
           >
-            Hi, I’m Tayyab. Web Developer & DSA Enthusiast.
+            Hi, I’m Tayyab. Full-Stack Web Developer & AI/ML Enthusiast.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -45,7 +45,7 @@ function Header() {
             transition={{ delay: 0.6, duration: 1 }}
           >
             I’m a passionate web developer and computer engineering student with 3+ years of hands-on experience in building full-stack applications. I specialize in creating clean, responsive UIs with React and robust backends using modern technologies.<br /><br />
-            Beyond development, I've solved over 1000+ LeetCode problems, strengthening my core in Data Structures and Algorithms — giving me an edge in building optimized, scalable solutions.
+            Beyond development, I've solved over 1150+ LeetCode problems, strengthening my core in Data Structures and Algorithms — giving me an edge in building optimized, scalable solutions.
           </motion.p>
           <motion.button
             className="btn"

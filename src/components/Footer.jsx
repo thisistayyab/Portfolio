@@ -32,11 +32,11 @@ function Footer() {
           <h4>Services</h4>
           <div className="footer__links">
             <a href="#">Website Design</a>
-            <a href="#">E-commerce Solutions</a>
+            <a href="#">Website Development</a>
             <a href="#">DSA Mastery</a>
-            <a href="#">Content Marketing</a>
+            <a href="#">API Development</a>
             <a href="#">SEO</a>
-            <a href="#">Digital Marketing</a>
+            <a href="#">App Development</a>
           </div>
         </div>
         <div className="footer__col">

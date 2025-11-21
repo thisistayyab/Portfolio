@@ -4,17 +4,16 @@ import { RiPenNibLine, RiLayoutMasonryLine, RiCheckboxLine } from 'react-icons/r
 function Banner() {
   return (
     <section className="section__container banner__container">
-      <div className="banner__card">
+      <div className="banner__card circle-icon">
         <span><RiPenNibLine size={24} /></span>
         <div>
           <h4>Design</h4>
           <p>
-            Our designers and content creators are committed to delivering
-            engaging digital content.
+            My focus is on delivering engaging and impactful digital content.
           </p>
         </div>
       </div>
-      <div className="banner__card">
+      <div className="banner__card circle-icon">
         <span><RiLayoutMasonryLine size={24} /></span>
         <div>
           <h4>Development</h4>
@@ -24,7 +23,7 @@ function Banner() {
           </p>
         </div>
       </div>
-      <div className="banner__card">
+      <div className="banner__card circle-icon">
         <span><RiCheckboxLine size={24} /></span>
         <div>
           <h4>Testing & QA</h4>

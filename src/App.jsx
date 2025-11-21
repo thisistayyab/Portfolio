@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import ThemeCustomization from './themes';
 import { motion } from 'framer-motion';
 import techIcons from './techIcons.jsx'
+import Clients from './components/Clients.jsx';
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = React.useState(() => window.innerWidth >= 768);
@@ -81,6 +82,7 @@ function App() {
         <About />
         <Banner />
         <Projects />
+        <Clients/>
         <Services />
         <Contact />
         <Footer />
