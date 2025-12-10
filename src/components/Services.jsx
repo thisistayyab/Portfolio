@@ -6,7 +6,7 @@ const profiles = [
     id: 1,
     name: 'Upwork',
     description: 'Check out my Upwork profile where I offer freelance MERN stack and full-stack development services.',
-    link: 'https://www.upwork.com/freelancers/thisistayyab',
+    link: 'https://www.upwork.com/freelancers/~015384474940802080',
     button: 'View Profile',
   },
   {
